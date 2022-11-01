@@ -1,0 +1,34 @@
+<div class="container">
+    <header class="jumbotron mt-5">
+        <div *ngIf="persona">
+            <h3>Listado de Personas</h3>
+            <table class="table">
+                <tr>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Tipo Documento</th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Primer Nombre</th>
+                    <th scope="col">Segundo Nombre</th>
+                    <th scope="col">Primer Apellido</th>
+                    <th scope="col">Segundo Apellido</th>
+                    <th scope="col">E-Mail</th>                
+                    <th scope="col">Celular</th>
+                    <th scope="col">Id Carnet</th>
+                </tr>
+                <tr *ngFor="let person of persona">
+                    <td scope="row" >{{person.id}}</td>
+                    <td scope="row" >{{person.tipoDocumento}}</td>
+                    <td scope="row" >{{person.codigo}}</td>
+                    <td scope="row" >{{person.primerNombre}}</td>
+                    <td scope="row" >{{person.segundoNombre}}</td>
+                    <td scope="row" >{{person.primerApellido}}</td>
+                    <td scope="row" >{{person.segundoApellido}}</td>
+                    <td scope="row" >{{person.correoElectronico}}</td>
+                    <td scope="row" >{{person.celular}}</td>
+                    <td scope="row" >{{person.rfidNfcIdCarnet.id}}</td>
+                </tr>
+            </table>
+        </div>
+        <p style="color:red;" *ngIf="message"></p>
+    </header>
+</div>

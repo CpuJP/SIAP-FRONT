@@ -1,0 +1,19 @@
+<div class="container">
+    <header class="jumbotron mt-5">
+        <div *ngIf="carnet">
+            <h3>Listado de Carnets</h3>
+            <table class="table">
+                <tr>
+                    <th scope="col">Id Carnet RFID</th>
+                </tr>
+                <tr *ngFor="let carne of carnet">
+                    <td scope="row">{{carne.id}}</td>
+                </tr>
+            </table>
+        </div>
+        <p style="color:red;" *ngIf="message">
+        Porfavor iniciar sesión para ver la información:
+        {{message}}
+        </p>
+    </header>
+</div>
