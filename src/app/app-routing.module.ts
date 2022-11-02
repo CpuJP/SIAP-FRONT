@@ -3,16 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
-import { CarnetComponent } from './carnet/carnet.component';
-import { PersonaComponent } from './persona/persona.component';
+import { CarnetComponent } from './GetAll/carnet/carnet.component';
+import { PersonaComponent } from './GetAll/persona/persona.component';
+import { NavMainComponent } from './nav-main/nav-main.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'persona', component: PersonaComponent },
-  { path: 'Carnet', component: CarnetComponent},
+  { path: 'carnet', component: CarnetComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'nav-main', component: NavMainComponent},
 ];
 
 @NgModule({

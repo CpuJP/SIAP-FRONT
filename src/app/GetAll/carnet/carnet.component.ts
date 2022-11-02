@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarnetService } from '../services/carnet.service';
+import { CarnetService } from '../../services/carnet.service';
 
 @Component({
   selector: 'app-carnet',

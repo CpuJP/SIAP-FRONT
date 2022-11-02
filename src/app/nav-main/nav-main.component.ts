@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenStorageService } from './services/token-storage.service';
+import { TokenStorageService } from '../services/token-storage.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-nav-main',
+  templateUrl: './nav-main.component.html',
+  styleUrls: ['./nav-main.component.css']
 })
-export class AppComponent implements OnInit {
+export class NavMainComponent implements OnInit {
 
   isLoggedIn = false;
   username?: string;
