@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
+  message?: any;
 
   constructor(private authService: AuthService) { }
 
@@ -33,6 +34,7 @@ export class RegisterComponent implements OnInit {
       err => {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
+        this.message = err.message;
       }
     );
   }
