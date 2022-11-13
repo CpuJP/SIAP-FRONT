@@ -9,8 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { CarnetComponent } from './GetAll/carnet/carnet.component';
-import { PersonaComponent } from './GetAll/persona/persona.component';
+import { CarnetComponent } from './carnet/carnet.component';
+import { PersonaComponent } from './persona/persona.component';
 import { NavMainComponent } from './nav-main/nav-main.component';
 import { HomeComponent } from './home/home.component';
 

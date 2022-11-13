@@ -1,0 +1,39 @@
+<app-nav-main></app-nav-main>
+<div class="container">
+    <header class="jumbotron mt-5">
+        <div *ngIf="persona" class="table-responsive">
+            <h3>Listado de Personas</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <th class="bg-success" scope="col">Documento</th>
+                    <th class="bg-success" scope="col">Tipo Documento</th>
+                    <th class="bg-success" scope="col">Código</th>
+                    <th class="bg-success" scope="col">Primer Nombre</th>
+                    <th class="bg-success" scope="col">Segundo Nombre</th>
+                    <th class="bg-success" scope="col">Primer Apellido</th>
+                    <th class="bg-success" scope="col">Segundo Apellido</th>
+                    <th class="bg-success" scope="col">E-Mail</th>                
+                    <th class="bg-success" scope="col">Celular</th>
+                    <th class="bg-success" scope="col">Id Carnet</th>
+                </tr>
+                <tr *ngFor="let person of persona">
+                    <td>{{person.id}}</td>
+                    <td>{{person.tipoDocumento}}</td>
+                    <td>{{person.codigo}}</td>
+                    <td>{{person.primerNombre}}</td>
+                    <td>{{person.segundoNombre}}</td>
+                    <td>{{person.primerApellido}}</td>
+                    <td>{{person.segundoApellido}}</td>
+                    <td>{{person.correoElectronico}}</td>
+                    <td>{{person.celular}}</td>
+                    <td>{{person.rfidNfcIdCarnet.id}}</td>
+                </tr>
+            </table>
+        </div>
+        <p style="color:red;" *ngIf="message">
+            Porfavor iniciar sesión para ver la información:
+            {{message}}
+        </p>
+    </header>
+</div>
+<router-outlet></router-outlet>

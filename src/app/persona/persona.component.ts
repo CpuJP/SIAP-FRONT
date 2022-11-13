@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonauService } from '../../services/personau.service';
+import { PersonauService } from 'src/app/services/personau.service';
 
 @Component({
   selector: 'app-persona',

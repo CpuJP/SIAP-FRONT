@@ -1,14 +1,14 @@
 <app-nav-main></app-nav-main>
 <div class="container">
     <header class="jumbotron mt-5">
-        <div *ngIf="carnet">
+        <div *ngIf="carnet" class="table-responsive">
             <h3>Listado de Carnets</h3>
-            <table class="table">
+            <table class="table table-bordered">
                 <tr>
-                    <th scope="col">Id Carnet RFID</th>
+                    <th class="bg-success" scope="col">Id Carnet RFID</th>
                 </tr>
                 <tr *ngFor="let carne of carnet">
-                    <td scope="row">{{carne.id}}</td>
+                    <td>{{carne.id}}</td>
                 </tr>
             </table>
         </div>
