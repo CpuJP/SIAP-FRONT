@@ -1,14 +1,6 @@
 <div id="app">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <a href="#" class="navbar-brand">Siap Home</a>
-    <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <li class="nav-item">
-        <a href="/carnet" class="nav-link">Carnet</a>
-      </li>
-      <li class="nav-item">
-        <a href="/persona" class="nav-link">Persona</a>
-      </li>
-    </ul>
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
       <li class="nav-item">
         <a href="/register" class="nav-link">Register</a>
@@ -17,7 +9,24 @@
         <a href="/login" class="nav-link">Login</a>
       </li>
     </ul>
-    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="/carnet" class="nav-link">Carnet</a>
+      </li>
+      <li class="nav-item">
+        <a href="/persona" class="nav-link">Persona</a>
+      </li>
+      <li class="nav-item navbar-collapse">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdow" data-bs-toggle="dropdown" aria-expanded="false">
+            Reportes
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a href="/reportes" class="dropdown-item">Biblioteca Estudiante</a></li>
+            <li><a href="#" class="dropdown-item">Biblioteca Docente</a></li>
+          </ul>
+        </div>
+      </li>
       <li class="nav-item">
         <a href="/home" class="nav-link" (click)="logout()">Logout</a>
       </li>

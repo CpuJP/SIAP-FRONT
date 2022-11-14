@@ -13,6 +13,8 @@ import { CarnetComponent } from './carnet/carnet.component';
 import { PersonaComponent } from './persona/persona.component';
 import { NavMainComponent } from './nav-main/nav-main.component';
 import { HomeComponent } from './home/home.component';
+import { ReportesComponent } from './reports/reporte_bilbioteca_estudiante/reportes.component';
+import { ReporteBibliotecaDocenteComponent } from './reports/reporte-biblioteca-docente/reporte-biblioteca-docente.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HomeComponent } from './home/home.component';
     CarnetComponent,
     PersonaComponent,
     NavMainComponent,
-    HomeComponent
+    HomeComponent,
+    ReportesComponent,
+    ReporteBibliotecaDocenteComponent
   ],
   imports: [
     BrowserModule,
