@@ -1,7 +1,7 @@
 <app-nav-main></app-nav-main>
 <div class="col-md-12">
     <div class="card card-container">
-        <h2>Generador reportes biblioteca docentes</h2>
+        <h2>Generador reportes campus egresados</h2>
         <form
             *ngIf="!isSuccessful"
             name="form"
@@ -10,47 +10,47 @@
             novalidate
         >
             <div class="form-group">
-                <label for="fecha_ingreso">Fecha Ingreso</label>
-                <input
-                    id="fecha_ingreso"
+                <label for="Fecha_Inicio">Fecha Inicio</label>
+                <input 
+                    id="Fecha_Inicio"
                     type="date"
                     class="form-control"
-                    name="fecha_ingreso"
-                    [(ngModel)]="form.fecha_ingreso"
+                    name="Fecha_Inicio"
+                    [(ngModel)]="form.Fecha_Inicio"
                     required
                     minlength="10"
                     maxlength="21"
-                    #fecha_ingreso="ngModel"
+                    #Fecha_Inicio="ngModel"
                 />
-                <div class="alert-danger" *ngIf="fecha_ingreso.errors && f.submitted">
-                    <div *ngIf="fecha_ingreso.errors.required">La fecha de inicio es obligatoria</div>
-                    <div *ngIf="fecha_ingreso.errors.minlength">
+                <div class="alert-danger" *ngIf="Fecha_Inicio.errors && f.submitted">
+                    <div *ngIf="Fecha_Inicio.errors.required">La fecha de inicio es obligatoria</div>
+                    <div *ngIf="Fecha_Inicio.errors.minlength">
                     La fecha de inicio debe tener mínimo 10
                     </div>
-                    <div *ngIf="fecha_ingreso.errors.maxlength">
+                    <div *ngIf="Fecha_Inicio.errors.maxlength">
                         La fecha de inicio debe tener máximo 11
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="fecha_salida">Fecha Salida</label>
-                <input
-                    id="fecha_salida"
+                <label for="Fecha_Final">Fecha Final</label>
+                <input 
+                    id="Fecha_Final"
                     type="date"
                     class="form-control"
-                    name="fecha_salida"
-                    [(ngModel)]="form.fecha_salida"
+                    name="Fecha_Final"
+                    [(ngModel)]="form.Fecha_Final"
                     required
                     minlength="10"
                     maxlength="21"
-                    #fecha_salida="ngModel"
+                    #Fecha_Final="ngModel"
                 />
-                <div class="alert-danger" *ngIf="fecha_salida.errors && f.submitted">
-                    <div *ngIf="fecha_salida.errors.required">La fecha final es obligatoria</div>
-                    <div *ngIf="fecha_salida.errors.minlength">
+                <div class="alert-danger" *ngIf="Fecha_Final.errors && f.submitted">
+                    <div *ngIf="Fecha_Final.errors.required">La fecha final es obligatoria</div>
+                    <div *ngIf="Fecha_Final.errors.minlength">
                     La fecha final debe tener mínimo 10
                     </div>
-                    <div *ngIf="fecha_salida.errors.maxlength">
+                    <div *ngIf="Fecha_Final.errors.maxlength">
                         La fecha final debe tener máximo 11
                     </div>
                 </div>
@@ -86,7 +86,7 @@
         <div class="alert alert-warning" *ngIf="message">
             Error al generar reporte <br /> {{message}}
         </div>
-        <div class="alert alert-warning" *ngIf="message">
+        <div class="alert alert-warning" *ngIf="errorMessage">
             Error al generar reporte <br /> {{errorMessage}}
         </div>
     </div>

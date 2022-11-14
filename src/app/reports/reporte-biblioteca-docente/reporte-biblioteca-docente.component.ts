@@ -25,7 +25,8 @@ export class ReporteBibliotecaDocenteComponent implements OnInit {
 
   onSubmit(): void {
     const {fecha_ingreso, fecha_salida, tipo} = this.form;
-    this.reporteService.bibliotecaDocente(fecha_ingreso, fecha_salida, tipo).subscribe((Response: BlobPart) => {
+    this.reporteService.bibliotecaDocente(fecha_ingreso, fecha_salida, tipo).subscribe(
+      (Response: BlobPart) => {
       const file = new Blob([Response], { type: 'application/'+tipo });
       const fileURL = URL.createObjectURL(file);
       window.open(fileURL);
