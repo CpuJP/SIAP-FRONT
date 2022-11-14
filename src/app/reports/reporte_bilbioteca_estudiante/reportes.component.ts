@@ -7,6 +7,7 @@ import { ReporteService } from '../../services/reporte.service';
   styleUrls: ['./reportes.component.css']
 })
 export class ReportesComponent implements OnInit {
+  
   form: any = {
     fecha_inicio: null,
     fecha_final: null,
@@ -16,7 +17,6 @@ export class ReportesComponent implements OnInit {
   isSignUpFailed = false;
   message?: any;
   errorMessage = '';
-
 
   constructor(private reporteService: ReporteService) { }
 

@@ -16,4 +16,11 @@ export class ReporteService {
     };
     return this.http.get<any>(API_URL+'biblioteca/estudiante/download'+'?'+'fecha_inicio='+fecha_inicio+'&'+'fecha_final='+fecha_final+'&'+'tipo='+tipo,httpOptions);
   }
+
+  bibliotecaDocente(fecha_ingreso: string, fecha_salida: string, tipo: string): any {
+    const httpOptions = {
+      responseType: 'arraybuffer' as 'json'
+    };
+    return this.http.get<any>(API_URL+'biblioteca/docente/download'+'?'+'fecha_ingreso='+fecha_ingreso+'&'+'fecha_salida='+fecha_salida+'&'+'tipo='+tipo,httpOptions)
+  }
 }

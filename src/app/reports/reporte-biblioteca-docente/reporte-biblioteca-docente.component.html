@@ -1,1 +1,91 @@
-<p>reporte-biblioteca-docente works!</p>
+<app-nav-main></app-nav-main>
+<div class="col-md-12">
+    <div class="card card-container">
+        <h1>Generador reportes biblioteca docentes</h1>
+        <form
+            *ngIf="!isSuccessful"
+            name="form"
+            (ngSubmit)="f.form.valid && onSubmit()"
+            #f="ngForm"
+            novalidate
+        >
+            <div class="form-group">
+                <label for="fecha_ingreso">Fecha Ingreso</label>
+                <input
+                    id="fecha_ingreso"
+                    type="date"
+                    class="form-control"
+                    name="fecha_ingreso"
+                    [(ngModel)]="form.fecha_ingreso"
+                    required
+                    minlength="10"
+                    maxlength="21"
+                    #fecha_ingreso="ngModel"
+                />
+                <div class="alert-danger" *ngIf="fecha_ingreso.errors && f.submitted">
+                    <div *ngIf="fecha_ingreso.errors.required">La fecha de inicio es obligatoria</div>
+                    <div *ngIf="fecha_ingreso.errors.minlength">
+                    La fecha de inicio debe tener mínimo 10
+                    </div>
+                    <div *ngIf="fecha_ingreso.errors.maxlength">
+                        La fecha de inicio debe tener máximo 11
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fecha_salida">Fecha Salida</label>
+                <input
+                    id="fecha_salida"
+                    type="date"
+                    class="form-control"
+                    name="fecha_salida"
+                    [(ngModel)]="form.fecha_salida"
+                    required
+                    minlength="10"
+                    maxlength="21"
+                    #fecha_salida="ngModel"
+                />
+                <div class="alert-danger" *ngIf="fecha_salida.errors && f.submitted">
+                    <div *ngIf="fecha_salida.errors.required">La fecha final es obligatoria</div>
+                    <div *ngIf="fecha_salida.errors.minlength">
+                    La fecha final debe tener mínimo 10
+                    </div>
+                    <div *ngIf="fecha_salida.errors.maxlength">
+                        La fecha final debe tener máximo 11
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo</label>
+                <select 
+                    name="tipo" 
+                    id="tipo"
+                    class="form-select" aria-label=".form-select-lg example"
+                    [(ngModel)]="form.tipo"
+                    required
+                    #tipo="ngModel"
+                >
+                    <option selected>-- Seleccione un tipo de Archivo --</option>
+                    <option value="PDF">PDF</option>
+                    <option value="EXCEL">EXCEL</option>
+                </select>
+                <div class="alert-danger" *ngIf="tipo.errors && f.submitted">
+                    <div *ngIf="tipo.errors.required">El tipo de archivo es obligatorio (PDF o EXCEL)</div>
+                    <div *ngIf="tipo.errors.minlength">
+                    El tipo debe tener mínimo 3
+                    </div>
+                    <div *ngIf="tipo.errors.maxlength">
+                        El tipo debe tener máximo 7
+                    </div>
+                </div>
+            </div>
+            <div class="form-group div-btn">
+                <button class="btn btn-primary btn-block">Generar Reporte</button>
+            </div>
+        </form>
+        <div class="alert alert-warning" *ngIf="message">
+            Error al generar reporte <br /> {{message}}
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

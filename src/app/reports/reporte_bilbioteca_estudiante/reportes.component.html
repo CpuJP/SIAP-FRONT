@@ -1,88 +1,91 @@
 <app-nav-main></app-nav-main>
 <div class="col-md-12">
-    <div class="card card-container"></div>
-    <form 
-        *ngIf="!isSuccessful"
-        name="form"
-        (ngSubmit)="f.form.valid && onSubmit()"
-        #f="ngForm"
-        novalidate
-    >
-    <div class="form-group">
-        <label for="fecha_inicio">Fecha Inicio</label>
-        <input 
-            id="fecha_inicio"
-            type="date"
-            class="form-control"
-            name="fecha_inicio"
-            [(ngModel)]="form.fecha_inicio"
-            required
-            minlength="10"
-            maxlength="21"
-            #fecha_inicio="ngModel"
-        />
-        <div class="alert-danger" *ngIf="fecha_inicio.errors && f.submitted">
-            <div *ngIf="fecha_inicio.errors.required">La fecha de inicio es obligatoria</div>
-            <div *ngIf="fecha_inicio.errors.minlength">
-              La fecha de inicio debe tener mínimo 10
+    <div class="card card-container">
+        <h1>Generador reportes biblioteca estudiante</h1>
+        <form 
+            *ngIf="!isSuccessful"
+            name="form"
+            (ngSubmit)="f.form.valid && onSubmit()"
+            #f="ngForm"
+            novalidate
+        >
+            <div class="form-group">
+                <label for="fecha_inicio">Fecha Inicio</label>
+                <input 
+                    id="fecha_inicio"
+                    type="date"
+                    class="form-control"
+                    name="fecha_inicio"
+                    [(ngModel)]="form.fecha_inicio"
+                    required
+                    minlength="10"
+                    maxlength="21"
+                    #fecha_inicio="ngModel"
+                />
+                <div class="alert-danger" *ngIf="fecha_inicio.errors && f.submitted">
+                    <div *ngIf="fecha_inicio.errors.required">La fecha de inicio es obligatoria</div>
+                    <div *ngIf="fecha_inicio.errors.minlength">
+                    La fecha de inicio debe tener mínimo 10
+                    </div>
+                    <div *ngIf="fecha_inicio.errors.maxlength">
+                        La fecha de inicio debe tener máximo 11
+                    </div>
+                </div>
             </div>
-            <div *ngIf="fecha_inicio.errors.maxlength">
-                La fecha de inicio debe tener máximo 11
+            <div class="form-group">
+                <label for="fecha_final">Fecha final</label>
+                <input
+                    id="fecha_final"
+                    type="date"
+                    class="form-control"
+                    name="fecha_final"
+                    [(ngModel)]="form.fecha_final"
+                    required
+                    minlength="10"
+                    maxlength="21"
+                    #fecha_final="ngModel"
+                />
+                <div class="alert-danger" *ngIf="fecha_final.errors && f.submitted">
+                    <div *ngIf="fecha_final.errors.required">La fecha final es obligatoria</div>
+                    <div *ngIf="fecha_final.errors.minlength">
+                    La fecha final debe tener mínimo 10
+                    </div>
+                    <div *ngIf="fecha_final.errors.maxlength">
+                        La fecha final debe tener máximo 11
+                    </div>
+                </div>
             </div>
-          </div>
-    </div>
-    <div class="form-group">
-        <label for="fecha_final">Fecha final</label>
-        <input
-            id="fecha_final"
-            type="date"
-            class="form-control"
-            name="fecha_final"
-            [(ngModel)]="form.fecha_final"
-            required
-            minlength="10"
-            maxlength="21"
-            #fecha_final="ngModel"
-        />
-        <div class="alert-danger" *ngIf="fecha_final.errors && f.submitted">
-            <div *ngIf="fecha_final.errors.required">La fecha final es obligatoria</div>
-            <div *ngIf="fecha_final.errors.minlength">
-              La fecha final debe tener mínimo 10
+            <div class="form-group">
+                <label for="tipo">Tipo</label>
+                <select 
+                    name="tipo" 
+                    id="tipo"
+                    class="form-select" aria-label=".form-select-lg example"
+                    [(ngModel)]="form.tipo"
+                    required
+                    #tipo="ngModel"
+                >
+                    <option selected>-- Seleccione un tipo de Archivo --</option>
+                    <option value="PDF">PDF</option>
+                    <option value="EXCEL">EXCEL</option>
+                </select>
+                <div class="alert-danger" *ngIf="tipo.errors && f.submitted">
+                    <div *ngIf="tipo.errors.required">El tipo de archivo es obligatorio (PDF o EXCEL)</div>
+                    <div *ngIf="tipo.errors.minlength">
+                    El tipo debe tener mínimo 3
+                    </div>
+                    <div *ngIf="tipo.errors.maxlength">
+                        El tipo debe tener máximo 7
+                    </div>
+                </div>
             </div>
-            <div *ngIf="fecha_final.errors.maxlength">
-                La fecha final debe tener máximo 11
+            <div class="form-group div-btn">
+                <button class="btn btn-primary btn-block">Generar Reporte</button>
             </div>
-          </div>
-    </div>
-    <div class="form-group">
-        <label for="tipo">Tipo</label>
-        <input
-            id="tipo"
-            type="text"
-            class="form-control"
-            name="tipo"
-            [(ngModel)]="form.tipo"
-            required
-            minlength="3"
-            maxlength="7"
-            #tipo="ngModel"
-        />
-        <div class="alert-danger" *ngIf="tipo.errors && f.submitted">
-            <div *ngIf="tipo.errors.required">El tipo de archivo es obligatorio (PDF o EXCEL)</div>
-            <div *ngIf="tipo.errors.minlength">
-              El tipo debe tener mínimo 3
-            </div>
-            <div *ngIf="tipo.errors.maxlength">
-                El tipo debe tener máximo 7
-            </div>
+        </form>
+        <div class="alert alert-warning" *ngIf="message">
+            Error al generar reporte <br /> {{message}}
         </div>
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary btn-block">Generar Reporte</button>
-    </div>
-    </form>
-    <div class="alert alert-warning" *ngIf="message">
-        Error al generar reporte <br /> {{message}}
     </div>
 </div>
 <router-outlet></router-outlet>

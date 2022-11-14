@@ -7,6 +7,7 @@ import { CarnetComponent } from './carnet/carnet.component';
 import { PersonaComponent } from './persona/persona.component';
 import { NavMainComponent } from './nav-main/nav-main.component';
 import { ReportesComponent } from './reports/reporte_bilbioteca_estudiante/reportes.component';
+import { ReporteBibliotecaDocenteComponent } from './reports/reporte-biblioteca-docente/reporte-biblioteca-docente.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'nav-main', component: NavMainComponent},
-  { path: 'reportes', component: ReportesComponent },
+  { path: 'biblioEstu', component: ReportesComponent },
+  { path: 'biblioDocen', component: ReporteBibliotecaDocenteComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
