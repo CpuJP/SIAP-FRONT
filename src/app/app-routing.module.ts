@@ -6,11 +6,11 @@ import { HomeComponent } from './home/home.component';
 import { CarnetComponent } from './carnet/carnet.component';
 import { PersonaComponent } from './persona/persona.component';
 import { NavMainComponent } from './nav-main/nav-main.component';
-import { ReportesComponent } from './reports/reporte_bilbioteca_estudiante/reportes.component';
 import { ReporteBibliotecaDocenteComponent } from './reports/reporte-biblioteca-docente/reporte-biblioteca-docente.component';
 import { ReporteCampusEstudianteComponent } from './reports/reporte-campus-estudiante/reporte-campus-estudiante.component';
 import { ReporteCampusDocenteComponent } from './reports/reporte-campus-docente/reporte-campus-docente.component';
 import { ReporteCampusEgresadoComponent } from './reports/reporte-campus-egresado/reporte-campus-egresado.component';
+import { ReportesComponent } from './reports/reporte_bilbioteca_estudiante/reportes.component';
 import { ReporteSalaComputoEstudianteComponent } from './reports/reporte-sala-computo-estudiante/reporte-sala-computo-estudiante.component';
 import { ReporteLaboratorioEstudianteComponent } from './reports/reporte-laboratorio-estudiante/reporte-laboratorio-estudiante.component';
 
