@@ -5,3 +5,9 @@
 .btbrand {
     margin-left: 10px;
 }
+.navbar-nav {
+    flex-direction: row;
+}
+.nav-item {
+    margin-top: 10px; 
+}

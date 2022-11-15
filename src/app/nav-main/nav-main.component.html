@@ -1,45 +1,59 @@
 <div id="app">
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a href="#" class="navbar-brand btbrand btn btn-outline-success">Siap Home</a>
-    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
-      <li class="nav-item">
-        <a href="/register" class="btn btn-secondary bttop" role="button">Register</a>
-      </li>
-      <li class="nav-item">
-        <a href="/login" class="btn btn-secondary bttop" role="button">Login</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn" routerLinkActive="active">
-      <li class="nav-item">
-        <a href="/carnet" class="btn btn-secondary bttop" role="button">Carnet</a>
-      </li>
-      <li class="nav-item">
-        <a href="/persona" class="btn btn-secondary bttop" role="button">Persona</a>
-      </li>
-      <li class="nav-item navbar-collapse">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle bttop" type="button" id="dropdow" data-bs-toggle="dropdown" aria-expanded="false">
-            Reportes
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a href="/biblioEstu" class="dropdown-item">Biblioteca Estudiante</a></li>
-            <li><a href="/biblioDocen" class="dropdown-item">Biblioteca Docente</a></li>
-            <li><a href="/campusEstu" class="dropdown-item">Campus Estudiante</a></li>
-            <li><a href="/campusDoce" class="dropdown-item">Campus Docente</a></li>
-            <li><a href="/campusEgre" class="dropdown-item">Campus Egresado</a></li>
-            <li><a href="/salaComEstu" class="dropdown-item">Sala Cómputo Estudiante</a></li>
-            <li><a href="/labEstu" class="dropdown-item">Laboratorio Estudiante</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="nav-item">
-        <div class="btn-group">
-          <button (click)="logout()" type="button" class="btn btn-danger bttop">Logout</button>
-        </div>
-      </li>
-    </ul>
+  <!-- Inicio del menú -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand btbrand btn btn-outline-success">Siap Home</a>
+      <!-- Botón del menú -->
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#menu"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Elementos del menú colapsable -->
+      <div class="collapse navbar-collapse btflex" id="menu">
+        <ul class="navbar-nav ms-auto" *ngIf="!isLoggedIn">
+          <li class="nav-item">
+            <a href="/register" class="btn btn-secondary bttop" role="button">Register</a>
+          </li>
+          <li class="nav-item">
+            <a href="/login" class="btn btn-secondary bttop" role="button">Login</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto" *ngIf="isLoggedIn" routerLinkActive="active">
+          <li class="nav-item">
+            <a href="/carnet" class="btn btn-secondary bttop" role="button">Carnet</a>
+          </li>
+          <li class="nav-item">
+            <a href="/persona" class="btn btn-secondary bttop" role="button">Persona</a>
+          </li>
+          <li class="nav-item navbar-collapse">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle bttop" type="button" id="dropdow" data-bs-toggle="dropdown" aria-expanded="false">
+                Reportes
+              </button>
+              <ul class="dropdown-menu me-auto" aria-labelledby="dropdownMenuButton1">
+                <li><a href="/biblioEstu" class="dropdown-item">Biblioteca Estudiante</a></li>
+                <li><a href="/biblioDocen" class="dropdown-item">Biblioteca Docente</a></li>
+                <li><a href="/campusEstu" class="dropdown-item">Campus Estudiante</a></li>
+                <li><a href="/campusDoce" class="dropdown-item">Campus Docente</a></li>
+                <li><a href="/campusEgre" class="dropdown-item">Campus Egresado</a></li>
+                <li><a href="/salaComEstu" class="dropdown-item">Sala Cómputo Estudiante</a></li>
+                <li><a href="/labEstu" class="dropdown-item">Laboratorio Estudiante</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="btn-group">
+              <button (click)="logout()" type="button" class="btn btn-danger bttop">Logout</button>
+            </div>
+          </li>
+      </ul>
+      <hr class="text-white-50">
+      </div>
+    </div>
   </nav>
-
   <div class="container">
     <router-outlet></router-outlet>
   </div>
